@@ -64,19 +64,37 @@ rsort($array);
 // ============================================
 
 // Create an associative array
+$assocArr = [
+  'key1' => 'one',
+  'key2' => 'two',
+  'key3' => 'three',
+  'arr' => ['A', 'B']
+];
 
 // Get element by key
+echo $assocArr['key1'];
 
 // Set element by key
+$assocArr['key2'] = 'newValue';
 
 // Null coalescing assignment operator. Since PHP 7.4
+if (!isset($assocArr['keyX'])) {
+  $assocArr['keyX'] = 'does not exist';
+};
 
-// Check if array has specific key
+//or
+
+$assocArr['keyX'] ??= 'does not exist';
 
 // Print the keys of the array
+array_keys($assocArr);
 
 // Print the values of the array
+array_values($assocArr);
 
 // Sorting associative arrays by values, by keys
+ksort($assocArr);
+asort($assocArr);
 
 // Two dimensional arrays
+// arrays/assoc arrays in an array
